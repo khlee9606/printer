@@ -1,0 +1,19 @@
+a = int(input("작업할 문서의 개수  : "))
+b = int(input("출력할 작업의 번호  : "))
+priority = list(map(int,input(" 우선순위 : ").split()))
+
+num = list(range(len(priority))) 
+print_time = 0
+
+while True:
+    if priority[0] == max(priority): 
+        print_time += 1
+        if num[0] == b:
+            print(print_time,"분")
+            break
+        else:
+            priority.pop(0)
+            num.pop(0)
+    else:
+        priority.append(priority.pop(0))
+        num.append(num.pop(0))
